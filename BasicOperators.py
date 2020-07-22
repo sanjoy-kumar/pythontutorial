@@ -81,7 +81,7 @@ c = 0
 c = a + b
 print("Line 1 - Value of c is ", c)
 
-c += a   # c += a is equivalent to c = c + a
+c += a  # c += a is equivalent to c = c + a
 print("Line 2 - Value of c is ", c)
 
 c *= a  # c *= a is equivalent to c = c * a
@@ -103,26 +103,26 @@ print("Line 7 - Value of c is ", c)
 ##  Python Bitwise Operators ##
 
 
-a = 60            # 60 = 0011 1100
-b = 13            # 13 = 0000 1101
+a = 60  # 60 = 0011 1100
+b = 13  # 13 = 0000 1101
 c = 0
 
-c = a & b        # 12 = 0000 1100 <= Binary AND
+c = a & b  # 12 = 0000 1100 <= Binary AND
 print("Line 1 - Value of c is ", c)
 
-c = a | b        # 61 = 0011 1101 <= Binary OR
+c = a | b  # 61 = 0011 1101 <= Binary OR
 print("Line 2 - Value of c is ", c)
 
-c = a ^ b        # 49 = 0011 0001  <= Binary XOR
+c = a ^ b  # 49 = 0011 0001  <= Binary XOR
 print("Line 3 - Value of c is ", c)
 
-c = ~a          # -61 = 1100 0011 <= Binary Ones Complement
+c = ~a  # -61 = 1100 0011 <= Binary Ones Complement
 print("Line 4 - Value of c is ", c)
 
-c = a << 2       # 240 = 1111 0000 <= Binary Left Shift
+c = a << 2  # 240 = 1111 0000 <= Binary Left Shift
 print("Line 5 - Value of c is ", c)
 
-c = a >> 2       # 15 = 0000 1111 <= Binary Right Shift
+c = a >> 2  # 15 = 0000 1111 <= Binary Right Shift
 print("Line 6 - Value of c is ", c)
 
 ## Python Logical Operators ##
@@ -130,15 +130,81 @@ print("Line 6 - Value of c is ", c)
 x = 5
 
 if (x > 3 and x < 10):
-    print("True") # returns True because 5 is greater than 3 AND 5 is less than 10
+    print("True")  # returns True because 5 is greater than 3 AND 5 is less than 10
 else:
     print("False")
 
-print(x > 3 or x < 4) # returns True because one of the conditions are true (5 is greater than 3, but 5 is not less than 4)
+print(
+    x > 3 or x < 4)  # returns True because one of the conditions are true (5 is greater than 3, but 5 is not less than 4)
 
-print(not(x > 3 and x < 10)) # returns False because not is used to reverse the result
+print(not (x > 3 and x < 10))  # returns False because not is used to reverse the result
 
 ## Python Membership Operators ##
 
-# https://www.tutorialspoint.com/python/python_basic_operators.htm
+a = 10
+b = 20
+listdata = [1, 2, 3, 4, 5];
 
+if a in listdata:
+    print("Line 1 - a is available in the given list")
+else:
+    print("Line 1 - a is not available in the given list")
+
+if b not in listdata:
+    print("Line 2 - b is not available in the given list")
+else:
+    print("Line 2 - b is available in the given list")
+
+a = 2
+if a in listdata:
+    print("Line 3 - a is available in the given list")
+else:
+    print("Line 3 - a is not available in the given list")
+
+## Python Identity Operators ##
+
+# Identity operators compare the memory locations of two objects.
+
+a = 20
+b = 20
+
+if a is b:
+    print("Line 1 - a and b have same identity")
+else:
+    print("Line 1 - a and b do not have same identity")
+
+if id(a) == id(b):
+    print("Line 2 - a and b have same identity")
+else:
+    print("Line 2 - a and b do not have same identity")
+
+b = 30
+if a is b:
+    print("Line 3 - a and b have same identity")
+else:
+    print("Line 3 - a and b do not have same identity")
+
+if a is not b:
+    print("Line 4 - a and b do not have same identity")
+else:
+    print("Line 4 - a and b have same identity")
+
+## Python Operators Precedenc ##
+
+a = 20
+b = 10
+c = 15
+d = 5
+e = 0
+
+e = (a + b) * c / d  # ( 30 * 15 ) / 5
+print("Value of (a + b) * c / d is ", e)
+
+e = ((a + b) * c) / d  # (30 * 15 ) / 5
+print("Value of ((a + b) * c) / d is ", e)
+
+e = (a + b) * (c / d)  # (30) * (15/5)
+print("Value of (a + b) * (c / d) is ", e)
+
+e = a + (b * c) / d  # 20 + (150/5)
+print("Value of a + (b * c) / d is ", e)
